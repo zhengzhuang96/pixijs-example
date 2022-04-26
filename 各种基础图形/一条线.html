@@ -1,0 +1,56 @@
+<!--
+ * @Author: zhengzhuang
+ * @Date: 2022-04-26 20:54:32
+ * @LastEditors: zhengzhuang01
+ * @LastEditTime: 2022-04-26 21:11:40
+ * @Description: In User Settings Edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一条线</title>
+</head>
+
+<body>
+  <script src="../pixi.min.js"></script>
+  <script type="text/javascript">
+    let type = "WebGL"
+    if (!PIXI.utils.isWebGLSupported()) {
+      type = "canvas"
+    }
+
+    // 创建一个 Pixi Application
+    let app = new PIXI.Application({
+      width: 256,         // default: 256 宽度
+      height: 256,        // default: 256 高度
+      antialias: true,    // default: true 反锯齿
+      transparent: false, // default: false 透明度
+      resolution: 1       // default: 1 分辨率
+    });
+
+    // 将Pixi自动为您创建的画布添加到HTML文档中
+    document.body.appendChild(app.view);
+
+    // 图形绘制,创建Pixi的Graphics类
+    var line = new PIXI.Graphics();
+
+    // 定义线的样式
+    line.lineStyle(4, 0xFFFFFF, 1);
+
+    // 开始位置
+    line.moveTo(0, 0);
+
+    // 终点位置
+    line.lineTo(80, 50);
+    line.x = 32;
+    line.y = 32;
+    app.stage.addChild(line);
+
+  </script>
+</body>
+
+</html>
