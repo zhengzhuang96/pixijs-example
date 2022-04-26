@@ -1,0 +1,47 @@
+<!--
+ * @Author: zhengzhuang01
+ * @Date: 2022-04-26 21:42:43
+ * @LastEditors: zhengzhuang01
+ * @LastEditTime: 2022-04-26 21:55:28
+ * @Description: In User Settings Edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>矩形</title>
+</head>
+
+<body>
+  <script src="../pixi.min.js"></script>
+  <script>
+    let app = new PIXI.Application({
+      width: 256,
+      height: 256,
+    })
+
+    document.body.appendChild(app.view);
+
+    // 创建Pixi的Graphics类
+    var rectangle = new PIXI.Graphics();
+
+    // 传入一个16进制的颜色参数来设置矩形的填充颜色
+    rectangle.beginFill(0x66CCFF);
+
+    // 给矩形一个4像素宽的红色轮廓, 透明度alpha设为1
+    rectangle.lineStyle(4, 0xFF3300, 1);
+
+    // 使用drawRect方法绘制矩形, 四个参数是x、y、宽度和高度
+    rectangle.drawRect(0, 0, 100, 100);
+
+    // 调用endFill方法，来结束绘制
+    rectangle.endFill();
+
+    app.stage.addChild(rectangle);
+  </script>
+</body>
+
+</html>
