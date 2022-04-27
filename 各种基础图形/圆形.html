@@ -1,0 +1,52 @@
+<!--
+ * @Author: zhengzhuang01
+ * @Date: 2022-04-27 11:56:19
+ * @LastEditors: zhengzhuang01
+ * @LastEditTime: 2022-04-27 12:02:20
+ * @Description: In User Settings Edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圆形</title>
+</head>
+
+<body>
+  <script src="../pixi.min.js"></script>
+  <script type="text/javascript">
+    let type = 'WebGL'
+    if (!PIXI.utils.isWebGLSupported()) {
+      type = 'canvas'
+    }
+
+    // 创建一个 PIXI Application
+    let app = new PIXI.Application({
+      width: 256,
+      height: 256,
+    })
+
+    // 将pixi自动为您创建的画布添加到HTML中
+    document.body.appendChild(app.view);
+
+    // 图形绘制，创建pixi的Graphics类
+    var circle = new PIXI.Graphics();
+
+    // 开始绘制，填充色
+    circle.beginFill(0x9966FF);
+
+    // 定义园的样式
+    circle.drawCircle(0, 0, 32);
+
+    // 结束绘制
+    circle.endFill();
+    circle.x = 64;
+    circle.y = 130;
+    app.stage.addChild(circle);
+  </script>
+</body>
+
+</html>
